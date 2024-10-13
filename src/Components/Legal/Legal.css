@@ -1,0 +1,59 @@
+/* Global Styles */
+body {
+    background-color: #1f1f1f; /* Black background */
+    color: #ffffff; /* White text */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .legal-container {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .legal-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .legal-container h1, .legal-container h2, .legal-container h3, .legal-container h4, .legal-container h5, .legal-container p, .legal-container ul, .legal-container ol {
+    color: #ffffff; /* White text */
+  }
+  
+  .legal-container .nav-tabs .nav-link {
+    background-color: #343a40; /* Dark background for tabs */
+    color: #ffffff; /* White text for tabs */
+    border-color: #444444;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .legal-container .nav-tabs .nav-link:hover {
+    background-color: #23272b; /* Darker background on hover */
+    border-color: #23272b;
+  }
+  
+  .legal-container .nav-tabs .nav-link.nav-link-active {
+    background-color: #4a4a4a; /* Dark grey background for active tab */
+    border-color: #4a4a4a;
+    color: #ffffff; /* White text for active tab */
+  }
+  
+  .legal-container .btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+    transition: all 0.3s ease-in-out;
+    color: #ffffff; /* White text for buttons */
+  }
+  
+  .legal-container .btn-dark:hover {
+    background-color: #23272b;
+    border-color: #23272b;
+  }
+  
+  .legal-container .alert-info {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #ffffff;
+  }

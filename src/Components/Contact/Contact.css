@@ -1,0 +1,65 @@
+.contact-container {
+    background-color: #3f3f3f; /* Black background */
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.25rem; /* Increase the base font size */
+  }
+  
+  .contact-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .contact-container h1 {
+    color: #ffffff; /* Light-colored text */
+    font-size: 2.5rem; /* Increase the heading font size */
+  }
+  
+  .contact-container p {
+    color: #ffffff; /* Light-colored text */
+    font-size: 1.5rem; /* Increase the paragraph font size */
+  }
+  
+  .contact-container .form-control {
+    background-color: #2c2c2c;
+    border-color: #444444;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.25rem; /* Increase font size for better readability */
+    padding: 0.75rem; /* Increase the padding for inputs and textareas */
+  }
+  
+  .contact-container .form-control::placeholder {
+    color: #a0a0a0; /* Light grey placeholder text */
+  }
+  
+  .contact-container .form-control:focus {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-color: #666666;
+    box-shadow: none;
+  }
+  
+  .contact-container .btn-dark {
+    background-color: #1f1f1f;
+    border-color: #343a40;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.25rem; /* Increase font size for better readability */
+    padding: 0.75rem; /* Increase the padding for buttons */
+  }
+  
+  .contact-container .btn-dark:hover {
+    background-color: #23272b;
+    border-color: #23272b;
+  }
+  
+  .contact-container .alert-info {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #ffffff;
+    font-size: 1.25rem; /* Increase the font size for alert messages */
+  }
+  
+  .contact-container .invalid-feedback {
+    font-size: 1.25rem; /* Increase the font size for error messages */
+  }

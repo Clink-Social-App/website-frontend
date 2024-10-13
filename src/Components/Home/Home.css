@@ -1,0 +1,26 @@
+.home-container {
+    background-color: #1f1f1f;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+  }
+  
+  .home-container h1, .home-container h2, .home-container p {
+    color: #ffffff;
+  }
+  
+  .home-container .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  .home-container .rounded-circle {
+    border: 5px solid #343a40;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .home-container .rounded-circle:hover {
+    transform: scale(1.1);
+  }

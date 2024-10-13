@@ -1,0 +1,47 @@
+.about-us-container {
+  background-color: #3f3f3f; 
+  padding: 50px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-us-container:hover {
+  transform: scale(1.05);
+}
+
+.about-us-container .rounded-circle {
+  border: 5px solid #343a40;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-us-container .rounded-circle:hover {
+  transform: scale(1.1);
+}
+
+.about-us-container h1, .about-us-container h2, .about-us-container h4, .about-us-container h5, .about-us-container p, .about-us-container ul {
+  color: #ffffff; /* Light-colored text */
+}
+
+.about-us-container .lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.about-us-container .row {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.about-us-container .col-lg-5, .about-us-container .col-md-6 {
+  margin-bottom: 2rem !important;
+}
+
+.about-us-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-us-container ul li {
+  margin-bottom: 0.5rem;
+}
