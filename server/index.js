@@ -25,6 +25,7 @@ app.use(helmet({
                 "https://clink.netlify.app",
                 "https://clinkapp.xyz",
                 "https://www.clinkapp.xyz",
+                "https://website-frontend-production-4b6a.up.railway.app/",
                 process.env.MONGODB_URI ? new URL(process.env.MONGODB_URI).origin : '',
             ].filter(Boolean), // Remove empty strings
             fontSrc: ["'self'", "https:", "data:"],
@@ -54,7 +55,8 @@ const allowedOrigins = [
     "http://localhost:3000",
     "https://clink.netlify.app",
     "https://clinkapp.xyz",
-    "https://www.clinkapp.xyz"
+    "https://www.clinkapp.xyz",
+    "https://website-frontend-production-4b6a.up.railway.app/"
 ];
 
 app.use(cors({
