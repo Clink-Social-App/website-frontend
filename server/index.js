@@ -91,12 +91,6 @@ const connectDB = async () => {
     try {
         // Parse the connection string to ensure it has the correct parameters
         let connectionString = process.env.MONGODB_URI;
-        if (!connectionString.includes('retryWrites=true')) {
-            connectionString += (connectionString.includes('?') ? '&' : '?') + 'retryWrites=true';
-        }
-        if (!connectionString.includes('w=majority')) {
-            connectionString += '&w=majority';
-        }
 
         const client = await MongoClient.connect(connectionString, {
             useNewUrlParser: true,
