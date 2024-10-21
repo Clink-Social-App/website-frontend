@@ -20,6 +20,7 @@ const allowedOrigins = [
     "https://clink.netlify.app",
     "https://clinkapp.xyz",
     "https://www.clinkapp.xyz",
+    "https://website-frontend-production-4b6a.up.railway.app",
     process.env.RAILWAY_STATIC_URL,
     process.env.RAILWAY_PUBLIC_DOMAIN
 ].filter(Boolean);
