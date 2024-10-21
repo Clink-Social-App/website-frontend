@@ -1,0 +1,81 @@
+.contact-container {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #495057;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form button {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #495057;
+  }
+  
+  .contact-form .invalid-feedback {
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+  .contact-form .status-message {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .contact-modal .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-modal .modal-header, .contact-modal .modal-footer {
+    border: none;
+  }
+  
+  .contact-modal .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .contact-modal .modal-footer button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  
+  .contact-modal .modal-footer button.btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .contact-modal .modal-footer button.btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  

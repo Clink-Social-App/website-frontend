@@ -43,3 +43,14 @@ body {
     transform: rotate(360deg);
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}

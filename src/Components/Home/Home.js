@@ -1,70 +1,108 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import WaitlistForm from '../../Components/WaitlistForm/WaitlistForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Home.css';
+import ContactForm from '../../Components/ContactModal/ContactForm';
+// import { FaGlassCheers, FaUsers, FaStar } from 'react-icons/fa';
 
 const Home = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
+
   return (
-    <div className="home-container">
-      <div className="container">
-        <section className="my-5">
-          <h1>Welcome to Clink!</h1>
-          <p className="lead">Your ultimate nightlife recommendation platform.</p>
-          <img 
-              src="./Images/LogoImage.jpg" 
-              alt="Alexander Cole" 
-              className="img-fluid mb-3 rounded-circle" 
-              style={{ width: '400px', height: '400px', borderRadius: '100px' }}
-          />    
-        </section>
+    <Container fluid className="p-0 bg-dark text-light">
+      <header className="py-5 text-center bg-black">
+      <h1 className="display-4 mb-3" style={{ fontFamily: 'Satisfy, cursive' }}>Introducing Clink!</h1>
+            <p className="lead">Personalizing your next night out</p>
+      </header>
 
-        <div className="row my-5">
-          <div className="col-md-6">
-            <section>
-              <h2>Our Mission</h2>
-              <p>
-                At Clink, our mission is to enhance social experiences by providing an interface where 
-                friends can connect, share, rate, and review their favorite bars.
-              </p>
-              <p>
-                We aim to create a trusted community where artificial intelligence-driven recommendations 
-                and personal insights from friends guide you to discover new venues and enjoy memorable nights out.
-              </p>
-              <p>
-                Our goal is to empower users to make informed decisions about their nightlife choices, 
-                fostering connections and creating a vibrant social network centered around shared experiences and local hotspots.
-              </p>
-            </section>
-          </div>
+      <section className="py-5 bg-dark text-center">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={8}>
+              <WaitlistForm horizontal />
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
-          <div className="col-md-6">
-            <section>
-              <h2>The Problem & Solution</h2>
-              <p>
-                People often struggle to find great places to get a drink, whether they're locals or newcomers to a city. 
-                They might know one or two good spots, but finding more can be challenging. Many of us rely on Google and 
-                Yelp reviews, but from experience, these aren't always reliable as they don’t represent reviews from people similar to you.
-              </p>
-              <p>
-                The general population is too broad to deliver a trustworthy review that suits your needs. 
-                That's why we created Clink, a social media platform where friends can rate and share their experiences at bars. 
-                We trust our friends' tastes and honest reviews, and Clink aims to solve the problem of not knowing where to enjoy 
-                a drink or have a fun night out in a city. 
-              </p>
-              <p>
-                Clink joins a reliable rating system with the social aspect of drinking, making the complete and most optimal 
-                experience for its users.
-              </p>
-            </section>
-          </div>
-        </div>
+      <section className="py-5 bg-dark">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6}>
+              <h2 className="mb-4">The Problem</h2>
+              <p className="lead">
+              Finding the perfect nightlife experience is exhausting, and public reviews are often unreliable - what does 4/5 stars even mean from a random stranger on the internet? The problem is that there’s no personalized way to find nightlife that truly fits your preferences, leaving you guessing and wasting time.              </p>
+            </Col>
+            <Col md={6} className="text-center">
+              <img src="./Images/first.png" alt="Mission" className="img-fluid" style={{ maxWidth: '400px' }} />
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
-        <section className="my-5 text-center">
-          <h2>Join Our Waitlist</h2>
-          <WaitlistForm />
-        </section>
-      </div>
-    </div>
+      <section className="py-5 bg-black">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6} className="text-center">
+            <img src="./Images/second.png" alt="Mission" className="img-fluid" style={{ maxWidth: '300px' }} />
+            </Col>
+            <Col md={6}>
+              <h2 className="mb-4">Our Solution</h2>
+              <p className="lead">
+              Clink is the first nightlife platform powered by AI, offering personalized bar recommendations that adapt to your preferences. It learns from your interactions, ensuring the suggestions stay fresh and relevant. Rather than relying on public reviews, Clink connects you with your friends’ posts, making it easy to find the perfect spot with trusted insights.              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="py-5 bg-dark">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6}>
+              <h2 className="mb-4">Why Clink?</h2>
+              <p className="lead">
+              Clink is here at the perfect moment, reshaping the way we connect and discover nightlife. Just as Facebook transformed social networking, Clink is the next generation — personalizing nightlife experiences through its powerful, proprietary machine learning algorithm. By blending your preferences with those of your closest friends, Clink delivers tailored bar recommendations that feel intuitive and social, making it easier than ever to find the perfect spot.              </p>
+            </Col>
+            <Col md={6} className="text-center">
+            <img src="./Images/third_alt.png" alt="Mission" className="img-fluid" style={{ maxWidth: '400px' }} />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="py-5 bg-dark">
+        <Container>
+          <h2 className="text-center mb-5">Be The First On Clink</h2>
+          <Row className="justify-content-center">
+            <Col md={6}>
+              <WaitlistForm />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="py-5 bg-black text-center">
+        <Container>
+          <h2 className="mb-4">Get In Touch With The Team</h2>
+          <Button variant="outline-light" size="lg" onClick={openModal}>Contact Us</Button>
+        </Container>
+      </section>
+
+      <Modal show={showModal} onHide={closeModal} centered>
+        <Modal.Header closeButton className="bg-dark text-light">
+          <Modal.Title>Contact Us</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bg-dark text-light">
+          <ContactForm />
+        </Modal.Body>
+      </Modal>
+
+      <footer className="py-3 bg-dark text-center">
+        <p>&copy; 2024 Clink. All rights reserved.</p>
+      </footer>
+    </Container>
   );
 };
 

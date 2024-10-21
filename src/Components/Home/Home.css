@@ -1,26 +1,46 @@
 .home-container {
-    background-color: #1f1f1f;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px 0;
-  }
-  
-  .home-container h1, .home-container h2, .home-container p {
-    color: #ffffff;
-  }
-  
-  .home-container .lead {
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-  
-  .home-container .rounded-circle {
-    border: 5px solid #343a40;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .home-container .rounded-circle:hover {
-    transform: scale(1.1);
-  }
+  font-family: 'Montserrat', sans-serif; /* Changed font */
+}
+
+.header-section {
+  /* background: url('./Images/LogoImage.jpg') no-repeat center center/cover; */
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section img.image {
+  width: 40%;
+  border-radius: 10px;
+}
+
+.section .content {
+  width: 50%;
+}
+
+.waitlist-section {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+}
+
+.contact-section {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}

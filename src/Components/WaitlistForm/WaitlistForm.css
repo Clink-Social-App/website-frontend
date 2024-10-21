@@ -1,49 +1,92 @@
+/* WaitlistForm.css */
 .waitlist-form-container {
-    max-width: 600px; /* Increase the width to make the form bigger */
-    padding: 30px; /* Increase padding to make the form bigger */
-    background-color: #3f3f3f;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.waitlist-form-container:hover {
+  transform: scale(1.02);
+}
+
+.waitlist-form-container .form-control {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border-color: #444444;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  height: 50px;
+}
+
+.waitlist-form-container .form-control::placeholder {
+  color: #cccccc;
+}
+
+.waitlist-form-container .form-control:focus {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #666666;
+  box-shadow: none;
+}
+
+.waitlist-form-container .btn-dark {
+  background-color: #1f1f1f;
+  border-color: #343a40;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  height: 50px;
+  padding: 0 20px;
+}
+
+.waitlist-form-container .btn-dark:hover {
+  background-color: #3f3f3f;
+  border-color: #23272b;
+}
+
+.waitlist-form-container .alert-info {
+  background-color: #343a40;
+  border-color: #343a40;
+  color: #ffffff;
+}
+
+.waitlist-form-container.horizontal {
+  max-width: 100%;
+  padding: 20px;
+}
+
+.waitlist-form-container .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.waitlist-form-container .form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.waitlist-form-container .form-group:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .waitlist-form-container .form-row {
+    flex-direction: column;
   }
   
-  .waitlist-form-container:hover {
-    transform: scale(1.05);
-  }
-  
-  .waitlist-form-container .form-control {
-    background-color: #1f1f1f;
-    color: #ffffff; /* Ensure text is white */
-    border-color: #444444;
-    transition: all 0.3s ease-in-out;
-    font-size: 1.2rem; /* Increase font size for better readability */
-  }
-  
-  .waitlist-form-container .form-control::placeholder {
-    color: #cccccc; /* Ensure placeholder text is white */
-  }
-  
-  .waitlist-form-container .form-control:focus {
-    background-color: #333333;
-    color: #ffffff;
-    border-color: #666666;
-    box-shadow: none;
+  .waitlist-form-container .form-group {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
   
   .waitlist-form-container .btn-dark {
-    background-color: #1f1f1f;
-    border-color: #343a40;
-    transition: all 0.3s ease-in-out;
-    font-size: 1.2rem; /* Increase font size for better readability */
+    width: 100%;
   }
-  
-  .waitlist-form-container .btn-dark:hover {
-    background-color: #3f3f3f;
-    border-color: #23272b;
-  }
-  
-  .waitlist-form-container .alert-info {
-    background-color: #343a40;
-    border-color: #343a40;
-    color: #ffffff;
-  }
+}
