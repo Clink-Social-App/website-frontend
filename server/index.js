@@ -5,10 +5,29 @@ const cors = require('cors');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Email transporter configuration
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS  // Changed from EMAIL_APP_PASSWORD to EMAIL_PASS
+    }
+});
+
+// Verify email configuration
+transporter.verify((error, success) => {
+    if (error) {
+        console.error('Email configuration error:', error);
+    } else {
+        console.log('Email server is ready');
+    }
+});
 
 // Trust proxy - Required for Railway deployment
 app.set('trust proxy', 1);
@@ -64,7 +83,7 @@ app.use(cors({
     maxAge: 86400
 }));
 
-// MongoDB sanitization (single instance)
+// MongoDB sanitization
 app.use(mongoSanitize({
     replaceWith: '_',
     onSanitize: ({ req, key }) => {
@@ -136,6 +155,24 @@ const initializeRoutes = (app, db) => {
                 ipAddress: req.ip
             });
 
+            // Send confirmation email to user
+            const userMailOptions = {
+                from: 'Clink <clinkllcnyc@gmail.com>',
+                to: email,
+                subject: 'Welcome to the Clink Waitlist!',
+                html: `
+                    <h2>Welcome to Clink!</h2>
+                    <p>Hi ${name},</p>
+                    <p>Thank you for joining our waitlist! You're currently in position #${position}.</p>
+                    <p>We'll keep you updated on our launch and any exciting developments.</p>
+                    <br>
+                    <p>Best regards,</p>
+                    <p>The Clink Team</p>
+                `
+            };
+
+            await transporter.sendMail(userMailOptions);
+
             res.status(200).json({ 
                 message: `You have been added to the waitlist at spot #${position}` 
             });
@@ -146,7 +183,7 @@ const initializeRoutes = (app, db) => {
         }
     });
 
-    // Contact route
+    // Contact route (email only, no DB storage)
     app.post('/api/contact', async (req, res) => {
         try {
             const { email, message } = req.body;
@@ -164,12 +201,22 @@ const initializeRoutes = (app, db) => {
                 return res.status(400).json({ error: 'Invalid email format' });
             }
 
-            await db.collection('contact_messages').insertOne({
-                email: email.toLowerCase().trim(),
-                message: message.trim(),
-                timestamp: new Date(),
-                ipAddress: req.ip
-            });
+            // Forward contact message to Clink team
+            const contactMailOptions = {
+                from: 'Clink Contact Form <clinkllcnyc@gmail.com>',
+                to: 'clinkllcnyc@gmail.com',
+                replyTo: email,
+                subject: 'New Contact Form Submission',
+                html: `
+                    <h3>New Contact Form Submission</h3>
+                    <p><strong>From:</strong> ${email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p>${message}</p>
+                    <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+                `
+            };
+
+            await transporter.sendMail(contactMailOptions);
 
             res.status(200).json({ message: 'Message sent successfully' });
 
