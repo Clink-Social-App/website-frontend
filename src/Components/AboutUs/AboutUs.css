@@ -1,47 +1,267 @@
-.about-us-container {
-  background-color: #3f3f3f; 
-  padding: 50px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
+/* AboutUs.css */
+.about-us-page {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.about-us-container:hover {
-  transform: scale(1.05);
+/* Hero Section */
+.about-hero {
+  background-color: #121212;
+  /* Fix the background image path */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-size: cover;
+  background-position: center;
+  color: #f8f9fa;
+  padding: 100px 0;
+  text-align: center;
 }
 
-.about-us-container .rounded-circle {
-  border: 5px solid #343a40;
-  transition: transform 0.3s ease-in-out;
+.about-hero h1 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-.about-us-container .rounded-circle:hover {
-  transform: scale(1.1);
-}
-
-.about-us-container h1, .about-us-container h2, .about-us-container h4, .about-us-container h5, .about-us-container p, .about-us-container ul {
-  color: #ffffff; /* Light-colored text */
-}
-
-.about-us-container .lead {
-  font-size: 1.5rem;
+.about-hero .lead {
+  font-size: 1.25rem;
   font-weight: 300;
 }
 
-.about-us-container .row {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
+/* Mission Section */
+.about-mission {
+  background-color: #1a1a1a;
+  padding: 80px 0;
+  position: relative;
 }
 
-.about-us-container .col-lg-5, .about-us-container .col-md-6 {
-  margin-bottom: 2rem !important;
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
 }
 
-.about-us-container ul {
-  list-style-type: none;
-  padding-left: 0;
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #e8b923;
 }
 
-.about-us-container ul li {
+.about-mission .section-title:after,
+.values-section .section-title:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f8f9fa;
+}
+
+/* Team Section */
+.team-section {
+  background-color: #121212;
+  padding: 80px 0;
+}
+
+.team-section.bg-darker {
+  background-color: #0a0a0a;
+}
+
+.team-card {
+  background-color: #1f1f1f;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.member-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+.team-card .card-body {
+  padding: 25px;
+  color: #f8f9fa;
+  background-color: #1f1f1f; /* Ensure card body has dark background */
+}
+
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #ffffff; /* Ensure name text is white */
+}
+
+.member-role {
+  color: #e8b923;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.member-background, 
+.member-education {
+  color: rgba(248, 249, 250, 0.8);
+  font-size: 0.95rem;
+}
+
+.member-details {
+  background-color: rgba(0, 0, 0, 0.3); /* Darker background for better contrast */
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(248, 249, 250, 0.9); /* Ensure text is visible */
+}
+
+.member-details p {
+  color: rgba(248, 249, 250, 0.9); /* Ensure text is visible */
+  margin-bottom: 0.5rem;
+}
+
+.member-details strong {
+  color: #e8b923; /* Highlight labels */
+}
+
+/* Values Section */
+.values-section {
+  background-color: #1a1a1a;
+  padding: 80px 0;
+}
+
+.value-card {
+  background-color: #272727;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-icon {
+  background-color: rgba(232, 185, 35, 0.1);
+  color: #e8b923;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #f8f9fa;
+}
+
+.value-card p {
+  color: rgba(248, 249, 250, 0.7);
+  font-size: 0.95rem;
+}
+
+/* Join Section */
+.join-section {
+  background-color: #0f0f0f;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  text-align: center;
+  color: #f8f9fa;
+}
+
+.join-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.join-btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(232, 185, 35, 0.3);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991.98px) {
+  .about-hero,
+  .join-section {
+    padding: 60px 0;
+  }
+  
+  .about-mission,
+  .team-section,
+  .values-section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .mission-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-hero,
+  .join-section {
+    padding: 40px 0;
+  }
+  
+  .about-mission,
+  .team-section,
+  .values-section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .mission-text {
+    font-size: 1rem;
+  }
+  
+  .member-image-container {
+    height: 250px;
+  }
 }

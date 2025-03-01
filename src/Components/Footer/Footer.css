@@ -1,0 +1,128 @@
+/* Footer.css */
+.site-footer {
+    background-color: #121212;
+    color: #f8f9fa;
+    padding: 60px 0 30px;
+    position: relative;
+  }
+  
+  .site-footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1f1f1f, #e8b923, #1f1f1f);
+  }
+  
+  .footer-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #e8b923;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #f8f9fa;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .footer-heading:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #e8b923;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-links li a {
+    color: rgba(248, 249, 250, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+  }
+  
+  .footer-links li a:hover {
+    color: #e8b923;
+    transform: translateX(5px);
+  }
+  
+  .social-links {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(248, 249, 250, 0.05);
+    border-radius: 50%;
+    margin-right: 12px;
+    color: #f8f9fa;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background-color: #e8b923;
+    color: #121212;
+    transform: translateY(-3px);
+  }
+  
+  .footer-divider {
+    margin: 30px 0;
+    border-color: rgba(248, 249, 250, 0.1);
+  }
+  
+  .copyright-text {
+    font-size: 0.9rem;
+    color: rgba(248, 249, 250, 0.6);
+    margin-bottom: 0;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 767.98px) {
+    .site-footer {
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    
+    .footer-heading:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .social-links {
+      justify-content: center;
+    }
+    
+    .footer-links li a:hover {
+      transform: none;
+    }
+  }

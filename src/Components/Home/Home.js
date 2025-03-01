@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import WaitlistForm from '../../Components/WaitlistForm/WaitlistForm';
-import ContactForm from '../../Components/ContactModal/ContactForm';
-// import { FaGlassCheers, FaUsers, FaStar } from 'react-icons/fa';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import WaitlistForm from '../WaitlistForm/WaitlistForm';
+import ContactModal from '../ContactModal/ContactModal';
+import './Home.css';
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -11,107 +11,155 @@ const Home = () => {
   const closeModal = () => setShowModal(false);
 
   return (
-    <Container fluid className="p-0 bg-dark text-light">
-      <header className="py-5 text-center bg-black">
-        <h1 className="display-4 mb-3" style={{ fontFamily: 'Satisfy, cursive' }}>Introducing Clink!</h1>
-        <p className="lead">Personalizing your next night out</p>
-      </header>
-
-      <section className="py-5 bg-dark text-center">
+    <div className="home-container">
+      {/* Hero Section */}
+      <section className="hero-section">
         <Container>
-          <Row className="justify-content-center">
-            <Col md={8}>
-              <WaitlistForm horizontal />
+          <Row className="justify-content-center text-center">
+            <Col lg={10} xl={8}>
+              <h1 className="hero-title">Discover Your Perfect Night Out</h1>
+              <p className="hero-subtitle">Clink is an AI-powered platform that personalizes your nightlife experience</p>
+              <Button 
+                variant="primary" 
+                size="lg" 
+                className="cta-button my-4"
+                onClick={() => {
+                  document.getElementById('waitlist-section').scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Join Our Waitlist
+              </Button>
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="py-5 bg-dark">
+      {/* Problem Section */}
+      <section className="content-section bg-dark">
         <Container>
-          <Row className="align-items-center">
-            <Col md={6}>
-              <h2 className="mb-4">The Problem</h2>
-              <p className="lead">
-                Finding the perfect nightlife experience is exhausting, and public reviews are often unreliable - what does 4/5 stars even mean from a random stranger on the internet? The problem is that there's no personalized way to find nightlife that truly fits your preferences, leaving you guessing and wasting time.
-              </p>
+          <Row className="align-items-center section-row">
+            <Col lg={6} className="mb-4 mb-lg-0">
+              <div className="content-block">
+                <h2>The Problem</h2>
+                <p className="lead">
+                  Finding the perfect nightlife experience is exhausting, and public reviews are often unreliable.
+                </p>
+                <ul className="feature-list">
+                  <li>Random reviews don't match your personal taste</li>
+                  <li>Hours wasted researching venues only to be disappointed</li>
+                  <li>Difficulty finding places that match your vibe and preferences</li>
+                </ul>
+              </div>
             </Col>
-            <Col md={6} className="text-center">
-              <div className="px-3">
-                <img src="./Images/first.png" alt="Mission" className="img-fluid w-90" style={{ maxWidth: '90%' }} />
+            <Col lg={6}>
+              <div className="image-container">
+                <img 
+                  src="./Images/first.png" 
+                  alt="Frustrated person looking at reviews" 
+                  className="img-fluid rounded shadow-lg" 
+                />
               </div>
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="py-5 bg-black">
+      {/* Solution Section */}
+      <section className="content-section bg-black">
         <Container>
-          <Row className="align-items-center">
-            <Col md={6} className="text-center">
-              <div className="px-3">
-                <img src="./Images/second.png" alt="Mission" className="img-fluid w-90" style={{ maxWidth: '90%' }} />
+          <Row className="align-items-center section-row flex-column-reverse flex-lg-row">
+            <Col lg={6}>
+              <div className="image-container">
+                <img 
+                  src="./Images/second.png" 
+                  alt="Clink app solution" 
+                  className="img-fluid rounded shadow-lg" 
+                />
               </div>
             </Col>
-            <Col md={6}>
-              <h2 className="mb-4">Our Solution</h2>
-              <p className="lead">
-                Clink is the first nightlife platform powered by AI, offering personalized bar recommendations that adapt to your preferences. It learns from your interactions, ensuring the suggestions stay fresh and relevant. Rather than relying on public reviews, Clink connects you with your friends' posts, making it easy to find the perfect spot with trusted insights.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="py-5 bg-dark">
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6}>
-              <h2 className="mb-4">Why Clink?</h2>
-              <p className="lead">
-                Clink is here at the perfect moment, reshaping the way we connect and discover nightlife. Just as Facebook transformed social networking, Clink is the next generation — personalizing nightlife experiences through its powerful, proprietary machine learning algorithm. By blending your preferences with those of your closest friends, Clink delivers tailored bar recommendations that feel intuitive and social, making it easier than ever to find the perfect spot.
-              </p>
-            </Col>
-            <Col md={6} className="text-center">
-              <div className="px-3">
-                <img src="./Images/third_alt.png" alt="Mission" className="img-fluid w-90" style={{ maxWidth: '90%' }} />
+            <Col lg={6} className="mb-4 mb-lg-0">
+              <div className="content-block">
+                <h2>Our Solution</h2>
+                <p className="lead">
+                  Clink is the first nightlife platform powered by AI, offering personalized bar recommendations that adapt to your preferences.
+                </p>
+                <ul className="feature-list">
+                  <li>AI-driven recommendations based on your preferences</li>
+                  <li>See where your friends actually go, not just public reviews</li>
+                  <li>Discover hidden gems that match your unique taste</li>
+                </ul>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="py-5 bg-dark">
+      {/* Why Clink Section */}
+      <section className="content-section bg-dark">
         <Container>
-          <h2 className="text-center mb-5">Be The First On Clink</h2>
-          <Row className="justify-content-center">
-            <Col md={6}>
+          <Row className="align-items-center section-row">
+            <Col lg={6} className="mb-4 mb-lg-0">
+              <div className="content-block">
+                <h2>Why Clink?</h2>
+                <p className="lead">
+                  Clink reshapes how we connect and discover nightlife through personalized experiences.
+                </p>
+                <ul className="feature-list">
+                  <li>Proprietary machine learning algorithm tailored to you</li>
+                  <li>Social recommendations from people you trust</li>
+                  <li>Constantly improving based on your feedback</li>
+                </ul>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="image-container">
+                <img 
+                  src="./Images/third_alt.png" 
+                  alt="Clink app interface" 
+                  className="img-fluid rounded shadow-lg" 
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Waitlist Section */}
+      <section id="waitlist-section" className="waitlist-section">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col lg={8}>
+              <h2 className="mb-4">Be The First On Clink</h2>
+              <p className="lead mb-5">Join our waitlist to get early access to the Clink experience</p>
               <WaitlistForm />
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="py-5 bg-black text-center">
+      {/* Contact Section */}
+      <section className="contact-section bg-black text-center">
         <Container>
-          <h2 className="mb-4">Get In Touch With The Team</h2>
-          <Button variant="outline-light" size="lg" onClick={openModal}>Contact Us</Button>
+          <Row className="justify-content-center">
+            <Col md={8} lg={6}>
+              <h2 className="mb-4">Questions or Feedback?</h2>
+              <p className="lead mb-4">Our team is ready to assist you</p>
+              <Button 
+                variant="outline-light" 
+                size="lg" 
+                className="contact-button"
+                onClick={openModal}
+              >
+                Contact Us
+              </Button>
+            </Col>
+          </Row>
         </Container>
       </section>
 
-      <Modal show={showModal} onHide={closeModal} centered>
-        <Modal.Header closeButton className="bg-dark text-light">
-          <Modal.Title>Contact Us</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="bg-dark text-light">
-          <ContactForm />
-        </Modal.Body>
-      </Modal>
-
-      <footer className="py-3 bg-dark text-center">
-        <p>&copy; 2024 Clink. All rights reserved.</p>
-      </footer>
-    </Container>
+      {/* Contact Modal */}
+      <ContactModal showModal={showModal} closeModal={closeModal} />
+    </div>
   );
 };
 

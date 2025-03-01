@@ -1,0 +1,113 @@
+/* ErrorBoundary.css */
+.error-page {
+    background-color: #121212;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+  }
+  
+  .error-container {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #f8f9fa;
+  }
+  
+  .error-icon {
+    font-size: 4rem;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .error-message {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: rgba(248, 249, 250, 0.8);
+  }
+  
+  .error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+  }
+  
+  .action-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .error-details {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin-top: 2rem;
+  }
+  
+  .error-details h5 {
+    color: #f8f9fa;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .error-details p {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+  
+  .stack-trace {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.8rem;
+    background-color: #0a0a0a;
+    padding: 15px;
+    border-radius: 4px;
+    color: rgba(248, 249, 250, 0.7);
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 767.98px) {
+    .error-container {
+      padding: 30px 20px;
+    }
+    
+    .error-icon {
+      font-size: 3rem;
+    }
+    
+    .error-container h1 {
+      font-size: 1.5rem;
+    }
+    
+    .error-message {
+      font-size: 1rem;
+    }
+    
+    .error-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .action-button {
+      width: 100%;
+    }
+  }
