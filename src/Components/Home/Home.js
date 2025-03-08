@@ -114,7 +114,7 @@ const Home = () => {
             <Col lg={6}>
               <div className="image-container">
                 <img 
-                  src="./Images/third_alt.png" 
+                  src="./Images/third.png" 
                   alt="Clink app interface" 
                   className="img-fluid rounded shadow-lg" 
                 />

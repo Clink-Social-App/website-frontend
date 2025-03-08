@@ -10,6 +10,7 @@ const AboutUs = () => {
       role: 'Lead Software Engineer at Clink LLC',
       background: 'Current Software Engineer at JPMorganChase.',
       education: 'Graduated from The University of Michigan College of Engineering, Class of 2024',
+      quote: '"Strikes and gutters man, strikes and gutters"',
       major: 'Computer Science',
       minor: 'Mathematics',
       image: './Images/alex.jpeg'
@@ -20,6 +21,7 @@ const AboutUs = () => {
       role: 'Head of Operations, Marketing, and Business Execution at Clink LLC',
       background: 'MPhil Candidate in Stem Cell Biology at The University of Cambridge.',
       education: 'Graduated from Case Western Reserve University, Class of 2024',
+      quote: '"Cheerio!"',
       major: 'Economics and Biology',
       minor: 'Chemistry',
       image: './Images/sahil.jpeg'
@@ -28,11 +30,12 @@ const AboutUs = () => {
       id: 3,
       name: 'John Gitterman, BS',
       role: 'Software Engineer at Clink LLC',
-      background: '',
+      background: 'Current Embedded Software Engineer at Aptiv',
       education: 'Graduated from University of Michigan, Class of 2024',
+      quote: '"Time is the ultimate arbiter of truth"',
       major: 'Computer Science',
       minor: 'Mathematics',
-      image: './Images/john.jpeg'
+      image: './Images/john.png'
     }
   ];
 
@@ -93,6 +96,8 @@ const AboutUs = () => {
                     )}
                     
                     <p className="member-education mb-3">{member.education}</p>
+                    <p className="member-education mb-3">{member.quote}</p>
+
                     
                     <div className="member-details">
                       <p className="mb-1"><strong>Major:</strong> {member.major}</p>
@@ -125,8 +130,14 @@ const AboutUs = () => {
                   <Card.Body>
                     <Card.Title className="member-name">{member.name}</Card.Title>
                     <Card.Subtitle className="member-role mb-3">{member.role}</Card.Subtitle>
+
+                    {member.background && (
+                      <p className="member-background mb-2">{member.background}</p>
+                    )}
                     
                     <p className="member-education mb-3">{member.education}</p>
+                    <p className="member-education mb-3">{member.quote}</p>
+
                     
                     <div className="member-details">
                       <p className="mb-1"><strong>Major:</strong> {member.major}</p>
