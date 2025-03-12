@@ -35,7 +35,18 @@ const AboutUs = () => {
       quote: '"Time is the ultimate arbiter of truth"',
       major: 'Computer Science',
       minor: 'Mathematics',
-      image: './Images/john.png'
+      image: './Images/john2.png'
+    },
+    {
+      id: 4,
+      name: 'Simran, BS',
+      role: 'Software Engineer Intern at Clink LLC',
+      background: 'Current Undergraduate Engineering Student at University of Michigan',
+      // education: 'Graduated from University of Michigan, Class of 2024',
+      quote: '"We shape technology, then it shapes us"',
+      major: 'TBD',
+      minor: 'TBD',
+      image: './Images/simran.png'
     }
   ];
 
@@ -76,7 +87,7 @@ const AboutUs = () => {
         <Container>
           <h2 className="section-title text-center mb-5">Co-Founders</h2>
           <Row>
-            {teamMembers.slice(0, 2).map(member => (
+            {teamMembers.slice(0, 3).map(member => (
               <Col lg={6} key={member.id} className="mb-4">
                 <Card className="team-card">
                   <div className="member-image-container">
@@ -116,7 +127,7 @@ const AboutUs = () => {
         <Container>
           <h2 className="section-title text-center mb-5">Team Members</h2>
           <Row>
-            {teamMembers.slice(2).map(member => (
+            {teamMembers.slice(3).map(member => (
               <Col lg={6} key={member.id} className="mb-4">
                 <Card className="team-card">
                   <div className="member-image-container">
