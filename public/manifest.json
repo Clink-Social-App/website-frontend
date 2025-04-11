@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/Images/LogoImage.jpg",
+      "src": "/Images/ClinkLogoV2.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/Images/LogoImage.jpg",
+      "src": "/Images/ClinkLogoV2.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }
