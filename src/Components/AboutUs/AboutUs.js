@@ -21,7 +21,7 @@ const AboutUs = () => {
       role: 'Head of Operations, Marketing, and Business Execution at Clink LLC',
       background: 'MPhil Candidate in Stem Cell Biology at The University of Cambridge.',
       education: 'Graduated from Case Western Reserve University, Class of 2024',
-      quote: '"Cheerio!"',
+      quote: '"In the middle of difficulty lies opportunity"',
       major: 'Economics and Biology',
       minor: 'Chemistry',
       image: './Images/sahil.jpeg'
